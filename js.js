@@ -25,6 +25,8 @@ const btn = document.querySelector("#btn");
     localStorage.setItem("number", thenumber);
     console.log(localStorage.getItem("number"));
     console.log(a.value);
+    
+    
     localStorage.setItem("thevar", a.value);
     
     console.log(localStorage.getItem("thevar"));
