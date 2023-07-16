@@ -18,17 +18,14 @@ const a = document.getElementById("text");
 a.value = localStorage.getItem("thevar");
 let thenumber = Number(localStorage.getItem("number"));
 const form = document.querySelector("#theform");
-
 const btn = document.querySelector("#btn");
-form.addEventListener("click", myFunction())
-myFunction = () =>{
-(e) => {
-    e.preventDefault();}
 
-    event=>event.preventDefault()();
-    thenumber = Number(localStorage.getItem("number"));
-  
-  thenumber++;
+form.addEventListener("click", myFunction)
+function myFunction (e) {
+
+    e.preventDefault();
+    console.log(Number(localStorage.getItem("number")));
+    thenumber++;
   localStorage.setItem("number", thenumber);
   console.log(localStorage.getItem("number"));
   console.log(a.value);
