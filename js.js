@@ -20,7 +20,7 @@ let thenumber = Number(localStorage.getItem("number"));
 const form = document.querySelector("#theform");
 const btn = document.querySelector("#btn");
 
-form.addEventListener("click", myFunction)
+form.addEventListener("submit", myFunction)
 function myFunction (e) {
 
     e.preventDefault();
@@ -41,9 +41,11 @@ function myFunction (e) {
         `;
     document.querySelector("#restart_btn").addEventListener("click", () => {
         localStorage.setItem("number", 0);
+        thenumber = localStorage.getItem("number");
+        console.log("The value of thenumber now is: " + thenumber);
         //document.location.reload();
         document.querySelector(".content" ).innerHTML = 
-        `<form onsubmit="myFunction()">
+        `<form id="theform">
         <label for="text">
             Please put input: 
         </label>
@@ -52,6 +54,8 @@ function myFunction (e) {
         <i style="margin: 20px">(Click đến 10!)</i>
         <p>Lần: ${thenumber}</p>
         </form>`;    
+        const form = document.querySelector("#theform");
+        form.addEventListener("submit", myFunction);
     });
   }
 };
