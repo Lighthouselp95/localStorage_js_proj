@@ -1,4 +1,5 @@
 "use strict";
+
 if (typeof localStorage.getItem("number") !== "string") {
   localStorage.setItem("number", 0);
 
@@ -14,7 +15,7 @@ if (typeof localStorage.getItem("thevar") !== "string") {
   );
 }
 document.querySelector("#times" ).innerHTML = `Lần: ` + localStorage.getItem("number");
-let a = document.getElementById("text");
+const a = document.getElementById("text");
 a.value = localStorage.getItem("thevar");
 let thenumber = Number(localStorage.getItem("number"));
 const form = document.querySelector("#theform");
@@ -30,8 +31,6 @@ function myFunction (e) {
   
   document.querySelector("#times" ).innerHTML = `Lần: ` + localStorage.getItem("number");
   localStorage.setItem("thevar", a.value);
-
- 
 
   if (thenumber >= 10) {
     document.querySelector(".content").innerHTML = `<p>Game over!</p>
@@ -55,10 +54,8 @@ function myFunction (e) {
         <p id="times">Lần: ${localStorage.getItem("number")}</p>
         </form>`;    
         const form = document.querySelector("#theform");
-        form.addEventListener("submit", myFunction);
-        
-        
-
+        form.addEventListener("submit", myFunction);     
+        document.querySelector("#text").value = localStorage.getItem("thevar");
     });
   }
 };
