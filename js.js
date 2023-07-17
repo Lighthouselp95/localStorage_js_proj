@@ -14,15 +14,14 @@ if (typeof localStorage.getItem("thevar") !== "string") {
   );
 }
 document.querySelector("#times" ).innerHTML = `Lần: ` + localStorage.getItem("number");
-const a = document.getElementById("text");
+let a = document.getElementById("text");
 a.value = localStorage.getItem("thevar");
 let thenumber = Number(localStorage.getItem("number"));
 const form = document.querySelector("#theform");
-const btn = document.querySelector("#btn");
 
 form.addEventListener("submit", myFunction)
 function myFunction (e) {
-
+    let a = document.getElementById("text");
     e.preventDefault();
     console.log(Number(localStorage.getItem("number")));
     thenumber++;
@@ -40,8 +39,9 @@ function myFunction (e) {
         <button id="restart_btn">Restart</button>
         `;
     document.querySelector("#restart_btn").addEventListener("click", () => {
+        
         localStorage.setItem("number", 0);
-        thenumber = localStorage.getItem("number");
+        thenumber = Number(localStorage.getItem("number"));
         console.log("The value of thenumber now is: " + thenumber);
         //document.location.reload();
         document.querySelector(".content" ).innerHTML = 
@@ -56,6 +56,9 @@ function myFunction (e) {
         </form>`;    
         const form = document.querySelector("#theform");
         form.addEventListener("submit", myFunction);
+        
+        
+
     });
   }
 };
