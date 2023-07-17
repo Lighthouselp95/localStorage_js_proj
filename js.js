@@ -19,19 +19,19 @@ a.value = localStorage.getItem("thevar");
 let thenumber = Number(localStorage.getItem("number"));
 const form = document.querySelector("#theform");
 
-form.addEventListener("submit", myFunction)
+form.addEventListener("submit", myFunction);
+
 function myFunction (e) {
     let a = document.getElementById("text");
     e.preventDefault();
     console.log(Number(localStorage.getItem("number")));
     thenumber++;
   localStorage.setItem("number", thenumber);
-  console.log(localStorage.getItem("number"));
-  console.log(a.value);
-
+  
+  document.querySelector("#times" ).innerHTML = `Lần: ` + localStorage.getItem("number");
   localStorage.setItem("thevar", a.value);
 
-  console.log(localStorage.getItem("thevar"));
+ 
 
   if (thenumber >= 10) {
     document.querySelector(".content").innerHTML = `<p>Game over!</p>
@@ -52,7 +52,7 @@ function myFunction (e) {
         <input type="text" name="text-input" id="text"></h4>
         <input type="submit" value="Gửi" id="btn">
         <i style="margin: 20px">(Click đến 10!)</i>
-        <p>Lần: ${thenumber}</p>
+        <p id="times">Lần: ${localStorage.getItem("number")}</p>
         </form>`;    
         const form = document.querySelector("#theform");
         form.addEventListener("submit", myFunction);
