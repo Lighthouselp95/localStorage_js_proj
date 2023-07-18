@@ -15,15 +15,15 @@ if (typeof localStorage.getItem("thevar") !== "string") {
   );
 }
 document.querySelector("#times" ).innerHTML = `Lần: ` + localStorage.getItem("number");
-const a = document.getElementById("text");
+let a = document.getElementById("text");
 a.value = localStorage.getItem("thevar");
 let thenumber = Number(localStorage.getItem("number"));
-const form = document.querySelector("#theform");
+let form = document.querySelector("#theform");
 
 form.addEventListener("submit", myFunction);
 
 function myFunction (e) {
-    let a = document.getElementById("text");
+    a = document.getElementById("text");
     e.preventDefault();
     console.log(Number(localStorage.getItem("number")));
     thenumber++;
@@ -53,7 +53,7 @@ function myFunction (e) {
         <i style="margin: 20px">(Click đến 10!)</i>
         <p id="times">Lần: ${localStorage.getItem("number")}</p>
         </form>`;    
-        const form = document.querySelector("#theform");
+        form = document.querySelector("#theform");
         form.addEventListener("submit", myFunction);     
         document.querySelector("#text").value = localStorage.getItem("thevar");
     });
