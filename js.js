@@ -60,12 +60,3 @@ function myFunction (e) {
   }
 };
 
-/* const myFunction = () => {
-    
-
-
-    let myName = localStorage.getItem("number");
-    myName++;
-    localStorage.setItem("number", myName);
-    console.log(localStorage.getItem("number"));
-} */
