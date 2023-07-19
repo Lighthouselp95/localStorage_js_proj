@@ -2,6 +2,8 @@
     border-sizing: border-box;
     padding: 0;
     margin: 0;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
 }
 
 body {
